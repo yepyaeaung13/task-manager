@@ -18,7 +18,7 @@ export default function SideNav({
   }) {
   const user = userInfo();
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
-  console.log("user", selectedListId);
+  // console.log("user", selectedListId);
 
   return (
     <div className="col-span-4 bg-white flex flex-col h-full rounded-xl p-5">
