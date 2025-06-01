@@ -65,4 +65,4 @@ npm run dev
 
 ## 🔗 Live Demo
 
-Check out the live demo: [View the App]()
+Check out the live demo: [View the App](https://task-manager-kohl-alpha.vercel.app/)
