@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@font-face {
+  font-family: 'Pyidaungsu';
+  src: url('/fonts/Pyidaungsu-2.5.3_Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+:root {
+  font-family: Pyidaungsu, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* color-scheme: light dark; */
+  color: #111927;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  cursor: pointer;
+  transition: all;
+  transition-duration: 200ms;
+}
+
+button:active {
+  scale: 0.95;
+}
+
+
