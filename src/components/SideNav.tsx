@@ -9,15 +9,16 @@ interface TaskList {
 
 export default function SideNav({
   selectedListId,
-  setSelectedListId,
+  handleSelectedListId,
   taskLists,
 }: {
   selectedListId: string;
-  setSelectedListId: (id: string) => void;
+  handleSelectedListId: (id: string) => void;
   taskLists: { items: TaskList[] } | undefined;
-}) {
+  }) {
   const user = userInfo();
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
+  console.log("user", selectedListId);
 
   return (
     <div className="col-span-4 bg-white flex flex-col h-full rounded-xl p-5">
@@ -40,7 +41,9 @@ export default function SideNav({
           {taskLists?.items?.map((list: TaskList) => (
             <li
               key={list.id}
-              onClick={() => setSelectedListId(list.id)}
+              onClick={() => {
+                handleSelectedListId(list.id as string);
+              }}
               className={`px-4 py-1 text-sm rounded-2xl shadow-xs border cursor-pointer  ${
                 selectedListId === list.id
                   ? "bg-blue-500 text-white"

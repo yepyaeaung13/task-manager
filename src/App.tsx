@@ -7,7 +7,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
-import { Toaster } from "../node_modules/react-hot-toast/src/components/toaster";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const queryClient = new QueryClient();

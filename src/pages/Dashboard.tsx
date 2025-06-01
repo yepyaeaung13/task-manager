@@ -25,6 +25,11 @@ export default function Dashboard() {
     }
   }, [taskLists, dispatch]);
 
+  const handleSelectedListId = (id: string) => {
+    dispatch(setSelectedListId(id));
+    setDrawerOpen(false);
+  }
+
   if (isLoading) return <Loading />;
 
   return (
@@ -34,7 +39,7 @@ export default function Dashboard() {
         <div className="hidden md:block col-span-4">
           <SideNav
             selectedListId={selectedListId}
-            setSelectedListId={setSelectedListId}
+            handleSelectedListId={handleSelectedListId}
             taskLists={taskLists}
           />
         </div>
@@ -43,10 +48,7 @@ export default function Dashboard() {
         <MobileDrawer isOpen={drawerOpen} onClose={() => setDrawerOpen(false)}>
           <SideNav
             selectedListId={selectedListId}
-            setSelectedListId={(id) => {
-              setSelectedListId(id);
-              setDrawerOpen(false); // close drawer on selection
-            }}
+            handleSelectedListId={handleSelectedListId}
             taskLists={taskLists}
           />
         </MobileDrawer>
